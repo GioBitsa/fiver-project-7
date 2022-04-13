@@ -35,6 +35,12 @@ document.addEventListener('scroll', () => {
 
 sideBar.addEventListener('click', () => {
     mobileNav.classList.toggle('active')
-    sideBar.classList.toggle('navOpened')
     sideBar.classList.toggle('animate')
+})
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active')
+        sideBar.classList.remove('animate')
+    }
 })

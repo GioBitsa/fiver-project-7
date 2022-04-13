@@ -29,14 +29,27 @@ document.addEventListener('scroll', () => {
 
     if (window.scrollY > lastScrollNumber) {
         // scrolling down
+        if (window.scrollY > 100) {
+            headerContainer.style.position = 'fixed'
+            headerContainer.style.top = '-100%'
+        }
         headerContainer.classList.remove('fixed')
         headerContainer.classList.remove('hover')
     } else {
         // scrolling up
+        if (window.scrollY > 100) {
+            headerContainer.style.position = 'fixed'
+            headerContainer.style.top = '0'
+        }
         headerContainer.classList.add('fixed')
         headerContainer.classList.add('hover')
     }
     lastScrollNumber = window.scrollY
+
+    if (window.scrollY < 100) {
+        headerContainer.classList.remove('fixed')
+        headerContainer.classList.remove('hover')
+    }
 })
 
 sideBar.addEventListener('click', () => {

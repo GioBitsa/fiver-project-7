@@ -206,6 +206,9 @@ svg {
     object-fit: cover;
 }
 
+
+/* container which appears when you click search button */
+
 .search-container {
     width: 100%;
     height: 100%;
@@ -285,6 +288,9 @@ svg {
     fill: var(--primary);
     cursor: pointer;
 }
+
+/* end of container which appears when you click search button */
+
 
 .row ul {
     display: flex;

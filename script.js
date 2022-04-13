@@ -23,14 +23,20 @@ headerContainer.addEventListener('mouseleave', () => {
     }
 })
 
+let lastScrollNumber = 0;
+
 document.addEventListener('scroll', () => {
-    if (window.scrollY > 700) {
+
+    if (window.scrollY > lastScrollNumber) {
+        // scrolling down
         headerContainer.classList.add('fixed')
         headerContainer.classList.add('hover')
-    } else if (window.scrollY < 100 || mobileNav.classList.contains(!'active')) {
+    } else {
+        // scrolling up
         headerContainer.classList.remove('fixed')
         headerContainer.classList.remove('hover')
     }
+    lastScrollNumber = window.scrollY
 })
 
 sideBar.addEventListener('click', () => {

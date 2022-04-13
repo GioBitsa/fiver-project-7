@@ -1,5 +1,4 @@
 const sideBar = document.getElementById('sideBar')
-const navClose = document.getElementById('navClose')
 const mobileNav = document.getElementById('mobileNav')
 const headerContainer = document.getElementById('headerContainer')
 const searchBtn = document.getElementById('searchBtn')
@@ -19,7 +18,7 @@ headerContainer.addEventListener('mouseover', () => {
 })
 
 headerContainer.addEventListener('mouseleave', () => {
-    if (window.scrollY < 100 && mobileNav.classList.contains(!'active')) {
+    if (window.scrollY < 100 || mobileNav.classList.contains(!'active')) {
         headerContainer.classList.remove('hover')
     }
 })
@@ -28,7 +27,7 @@ document.addEventListener('scroll', () => {
     if (window.scrollY > 1000) {
         headerContainer.classList.add('fixed')
         headerContainer.classList.add('hover')
-    } else if (window.scrollY < 100) {
+    } else if (window.scrollY < 100 || mobileNav.classList.contains(!'active')) {
         headerContainer.classList.remove('fixed')
         headerContainer.classList.remove('hover')
     }
@@ -37,5 +36,5 @@ document.addEventListener('scroll', () => {
 sideBar.addEventListener('click', () => {
     mobileNav.classList.toggle('active')
     sideBar.classList.toggle('navOpened')
-    navClose.classList.toggle('navOpened')
+    sideBar.classList.toggle('animate')
 })

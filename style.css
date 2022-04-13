@@ -75,31 +75,61 @@ svg {
     cursor: pointer;
     padding: 8px;
     display: none;
+    transition: all 0.3s;
 }
 
 .sidebar svg {
     fill: white;
 }
 
-.navclose {
-    display: none;
+.sidebar .navopen {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
 }
 
-.sidebar.navOpened .navopen {
-    display: none !important;
+.sidebar .navopen span {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: rotate(0);
+    transition: all 0.3s;
 }
 
-.sidebar.navOpened .navclose {
-    display: block !important;
+.sidebar .navopen span:nth-child(3) {
+    opacity: 1;
 }
 
-#headerContainer.hover .sidebar svg {
-    fill: var(--primary);
+.sidebar.animate .navopen span:nth-child(1) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.sidebar.animate .navopen span:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar.animate .navopen span:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+#headerContainer.hover .navopen span {
+    background-color: var(--primary);
 }
 
 .mobile-nav {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 69px;
     left: -100%;
     transition: all 0.3s;

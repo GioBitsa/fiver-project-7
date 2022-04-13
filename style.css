@@ -84,8 +84,8 @@ svg {
 }
 
 .sidebar .navopen {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -357,6 +357,10 @@ svg {
 
     .search span {
         display: none;
+    }
+
+    .row {
+        margin: 0;
     }
 
     .row:nth-child(1) {

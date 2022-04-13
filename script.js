@@ -29,12 +29,12 @@ document.addEventListener('scroll', () => {
 
     if (window.scrollY > lastScrollNumber) {
         // scrolling down
-        headerContainer.classList.add('fixed')
-        headerContainer.classList.add('hover')
-    } else {
-        // scrolling up
         headerContainer.classList.remove('fixed')
         headerContainer.classList.remove('hover')
+    } else {
+        // scrolling up
+        headerContainer.classList.add('fixed')
+        headerContainer.classList.add('hover')
     }
     lastScrollNumber = window.scrollY
 })

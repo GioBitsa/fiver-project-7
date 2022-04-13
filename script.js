@@ -24,7 +24,7 @@ headerContainer.addEventListener('mouseleave', () => {
 })
 
 document.addEventListener('scroll', () => {
-    if (window.scrollY > 1000) {
+    if (window.scrollY > 500) {
         headerContainer.classList.add('fixed')
         headerContainer.classList.add('hover')
     } else if (window.scrollY < 100 || mobileNav.classList.contains(!'active')) {

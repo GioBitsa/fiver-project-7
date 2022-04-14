@@ -201,7 +201,7 @@ svg {
 }
 
 .gb-logo img {
-    width: 150px;
+    width: 120px;
     height: 100%;
     object-fit: cover;
 }
@@ -331,7 +331,7 @@ svg {
 .gb-row:nth-child(2) ul li a {
     color: white;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: .05813rem;
     line-height: 1;
     white-space: nowrap;

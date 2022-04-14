@@ -13,10 +13,6 @@
 
 /* constants */
 
-body {
-    background-color: #c5ccc5;
-}
-
 a {
     text-decoration: none;
     color: var(--primary);

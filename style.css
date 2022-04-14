@@ -68,7 +68,7 @@ svg {
 
 .gb-row:nth-child(2) {
     justify-content: center;
-    margin: 20px 0 10px 0;
+    margin: 10px 0 5px 0;
 }
 
 
@@ -299,6 +299,7 @@ svg {
 .gb-row ul {
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .gb-row:nth-child(1) {
@@ -333,7 +334,7 @@ svg {
 
 .gb-row:nth-child(2) ul li a {
     color: white;
-    font-size: .8125rem;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: .05813rem;
     line-height: 1;

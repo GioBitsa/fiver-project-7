@@ -13,6 +13,10 @@
 
 /* constants */
 
+body {
+    background-color: #c5ccc5;
+}
+
 a {
     text-decoration: none;
     color: var(--primary);
@@ -49,29 +53,28 @@ svg {
     left: 0;
 }
 
-.wrapper {
+.gb-wrapper {
     width: 100%;
-    padding: 20px 3.333vw 30px;
+    padding: 10px 40px 10px;
     margin: 0 auto;
 }
 
-.row {
+.gb-row {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 0;
 }
 
-.row:nth-child(2) {
+.gb-row:nth-child(2) {
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px 0 10px 0;
 }
 
 
 /* burger icon and mobile navbar */
 
-.sidebar {
+.gb-sidebar {
     align-items: center;
     cursor: pointer;
     padding: 8px;
@@ -79,11 +82,11 @@ svg {
     transition: all 0.3s;
 }
 
-.sidebar svg {
+.gb-sidebar svg {
     fill: white;
 }
 
-.sidebar .navopen {
+.gb-sidebar .navopen {
     width: 18px;
     height: 18px;
     display: flex;
@@ -93,7 +96,7 @@ svg {
     justify-content: space-between;
 }
 
-.sidebar .navopen span {
+.gb-sidebar .navopen span {
     display: inline-block;
     width: 100%;
     height: .0625rem;
@@ -102,22 +105,22 @@ svg {
     transition: all 0.3s;
 }
 
-.sidebar .navopen span:nth-child(3) {
+.gb-sidebar .navopen span:nth-child(3) {
     opacity: 1;
 }
 
-.sidebar.animate .navopen span:nth-child(1) {
+.gb-sidebar.animate .navopen span:nth-child(1) {
     position: absolute;
     top: 50%;
     left: 0;
     transform: rotate(45deg);
 }
 
-.sidebar.animate .navopen span:nth-child(2) {
+.gb-sidebar.animate .navopen span:nth-child(2) {
     opacity: 0;
 }
 
-.sidebar.animate .navopen span:nth-child(3) {
+.gb-sidebar.animate .navopen span:nth-child(3) {
     position: absolute;
     top: 50%;
     left: 0;
@@ -173,43 +176,44 @@ svg {
 /* end of burger icon and mobile navbar */
 
 
-.search {
+.gb-search {
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: 8px;
+    display: none;
 }
 
-.search span {
+.gb-search span {
     font-size: .875rem;
     letter-spacing: .0625rem;
     font-weight: 400;
     color: white;
 }
 
-#headerContainer.hover .search span {
+#headerContainer.hover .gb-search span {
     color: var(--primary);
 }
 
-.search svg {
+.gb-search svg {
     margin-right: 10px;
     fill: white;
 }
 
-#headerContainer.hover .search svg {
+#headerContainer.hover .gb-search svg {
     fill: var(--primary);
 }
 
-.logo img {
+.gb-logo img {
     width: 150px;
     height: 100%;
     object-fit: cover;
 }
 
 
-/* container which appears when you click search button */
+/* container which appears when you click gb-search button */
 
-.search-container {
+.gb-search-container {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -223,12 +227,12 @@ svg {
     z-index: 1;
 }
 
-.search-container.visible {
+.gb-search-container.visible {
     display: flex;
     top: 0;
 }
 
-.search-container form {
+.gb-search-container form {
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -237,7 +241,7 @@ svg {
     position: relative;
 }
 
-.search-container form .input {
+.gb-search-container form .input {
     width: 100%;
     max-width: 680px;
     display: flex;
@@ -246,7 +250,7 @@ svg {
     padding-right: 25px;
 }
 
-.search-container form .input svg {
+.gb-search-container form .input svg {
     width: 50px;
     height: 44px;
     position: absolute;
@@ -258,7 +262,7 @@ svg {
     cursor: pointer;
 }
 
-.search-container form .input input {
+.gb-search-container form .input input {
     width: 100%;
     padding: 0 1rem 0 2.75rem;
     background-color: #f6f5f3;
@@ -273,7 +277,7 @@ svg {
     height: 2.75rem;
 }
 
-.search-container form .input input:focus {
+.gb-search-container form .input input:focus {
     outline: none;
 }
 
@@ -289,37 +293,45 @@ svg {
     cursor: pointer;
 }
 
-/* end of container which appears when you click search button */
+/* end of container which appears when you click gb-search button */
 
 
-.row ul {
+.gb-row ul {
     display: flex;
     align-items: center;
 }
 
-.row:nth-child(1) ul li {
+.gb-row:nth-child(1) {
+    justify-content: center;
+}
+
+.gb-row:nth-child(1) ul {
+    display: none;
+}
+
+.gb-row:nth-child(1) ul li {
     margin-left: 10px;
 }
 
-.row:nth-child(1) ul li a {
+.gb-row:nth-child(1) ul li a {
     color: white;
 }
 
-#headerContainer.hover .row:nth-child(1) ul li a {
+#headerContainer.hover .gb-row:nth-child(1) ul li a {
     color: var(--primary);
 }
 
-.row:nth-child(1) ul li a {
+.gb-row:nth-child(1) ul li a {
     font-size: .875rem;
     letter-spacing: .0625rem;
     font-weight: 400;
 }
 
-.row:nth-child(2) ul li {
+.gb-row:nth-child(2) ul li {
     margin: 0 10px;
 }
 
-.row:nth-child(2) ul li a {
+.gb-row:nth-child(2) ul li a {
     color: white;
     font-size: .8125rem;
     font-weight: 700;
@@ -327,62 +339,63 @@ svg {
     line-height: 1;
     white-space: nowrap;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     transition: all 0.3s;
     border-bottom: 1px solid transparent;
 }
 
-#headerContainer.hover .row:nth-child(2) ul li a {
+#headerContainer.hover .gb-row:nth-child(2) ul li a {
     color: var(--primary);
 }
 
-.row:nth-child(2) ul li a:hover {
+.gb-row:nth-child(2) ul li a:hover {
     border-bottom: 1px solid var(--primary);
 }
 
 
 @media screen and (max-width: 768px) {
-    .wrapper {
-        padding: 20px 1rem 20px .5rem;
+    .gb-wrapper {
+        padding: 20px 1rem 20px 1rem;
     }
 
-    .logo {
+    .gb-logo {
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .logo img {
+    .gb-logo img {
         width: 100px;
     }
 
-    .search {
+    .gb-search {
         padding: 4px;
     }
 
-    .search span {
+    .gb-search span {
         display: none;
     }
 
-    .row {
+    .gb-row {
         margin: 0;
     }
 
-    .row:nth-child(1) {
+    .gb-row:nth-child(1) {
         height: 29px;
+        justify-content: flex-start;
     }
 
-    .row:nth-child(1) ul {
+    .gb-row:nth-child(1) ul {
         display: none;
     }
 
-    .sidebar {
+    .gb-sidebar {
         display: flex;
         padding: 4px;
     }
 
-    .row:nth-child(2) {
+    .gb-row:nth-child(2) {
         display: none;
     }
 }

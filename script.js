@@ -43,7 +43,7 @@ let lastScrollNumber = 0; // number which is for detecting scrolling direction
 
 document.addEventListener('scroll', () => {
 
-    if (window.scrollY > lastScrollNumber) {
+    if (window.scrollY > lastScrollNumber && !mobileNav.classList.contains('active')) {
         // scrolling down
         if (window.scrollY > 100) {
             headerContainer.style.position = 'fixed'
@@ -62,7 +62,7 @@ document.addEventListener('scroll', () => {
     }
     lastScrollNumber = window.scrollY
 
-    if (window.scrollY < 100) {
+    if (window.scrollY < 100 && !mobileNav.classList.contains('active')) {
         headerContainer.classList.remove('fixed')
         headerContainer.classList.remove('hover')
     }

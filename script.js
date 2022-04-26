@@ -72,6 +72,13 @@ document.addEventListener('scroll', () => {
 sideBar.addEventListener('click', () => {
     mobileNav.classList.toggle('active')
     sideBar.classList.toggle('animate')
+    if (mobileNav.classList.contains('active')) {
+        headerContainer.classList.add('fixed')
+        headerContainer.classList.add('hover')
+    } else {
+        headerContainer.classList.remove('fixed')
+        headerContainer.classList.remove('hover')
+    }
 })
 
 // if you open mobile navigation menu and then resize window, that navigation should be closed
